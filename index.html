@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#fdfcf8">
+<title>Ané &amp; Dirk · 18.12.2027</title>
+<meta property="og:title" content="Ané &amp; Dirk · 18.12.2027">
+<meta property="og:description" content="Joubertsdal, Swellendam">
+<meta property="og:image" content="https://stoffbergtroufees.com/chapel.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='12' fill='%23fdfcf8' stroke='%234b5730' stroke-width='2'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --pearl: #fdfcf8;
+  --pearl-2: #f6f2ea;
+  --beige: #d8c6a8;
+  --beige-deep: #a88d66;
+  --olive: #4b5730;
+  --olive-deep: #333b20;
+  --ink: #141414;
+  --ink-soft: #2e2e2b;
+  --line: #e2d8c7;
+
+  --display: "Gilda Display", "Cormorant Garamond", Georgia, serif;
+  --body: "EB Garamond", "Cormorant Garamond", Garamond, Georgia, serif;
+
+  --measure: 34rem;
+  --card: #ffffff;
+  --panel: #f1f8e9;
+  --mint: #f1f8e9;
+  --mint-deep: #dbe9c9;
+}
+:root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--pearl) radial-gradient(120% 60% at 50% 0%, #ffffff 0%, rgba(255,255,255,0) 70%) no-repeat;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color-scheme: light;
+  font-weight: 400;
+}
+
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.12; margin: 0; }
+p { margin: 0 0 1em; }
+a { color: var(--olive); }
+:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(100% - 2.5rem, 40rem); margin-inline: auto; }
+
+/* Top bar */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 0;
+}
+.monogram { font-family: var(--display); font-size: 1.35rem; color: var(--ink); text-decoration: none; }
+.monogram span { color: var(--beige-deep); padding: 0 .15em; }
+
+.lang {
+  display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--card);
+}
+.lang button {
+  font: 500 .85rem/1 var(--body); letter-spacing: .02em;
+  border: 0; background: transparent; color: var(--ink-soft);
+  padding: .55rem .85rem; border-radius: 999px; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--mint); color: var(--olive-deep); box-shadow: inset 0 0 0 1px var(--mint-deep); }
+
+/* Watercolour of the chapel and the Langeberg */
+.scene { display: block; width: calc(100% + 1.5rem); max-width: none; height: auto; aspect-ratio: 960 / 619; margin: .25rem -.75rem 0; animation: scene-in 1.2s ease-out both; }
+@keyframes scene-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .scene { animation: none; } }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  font: 500 1.1rem/1 var(--body);
+  padding: 1rem 1.4rem; border-radius: 999px; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--mint-deep); background: var(--mint); color: var(--olive-deep);
+  min-height: 3rem;
+}
+.btn:hover { background: #e6f1d9; border-color: #cddfb6; }
+.btn.ghost { background: transparent; color: var(--olive-deep); border-color: var(--beige); }
+.btn.ghost:hover { background: var(--pearl-2); }
+.btn[disabled] { opacity: .55; cursor: progress; }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+
+.footer {
+  text-align: center; color: var(--ink-soft); font-size: .92rem;
+  padding: 3rem 0 3.5rem;
+}
+.footer button {
+  font: inherit; color: var(--olive); background: none; border: 0; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px; padding: .25rem;
+}
+
+  /* ---------- Save the date ---------- */
+  .hero { text-align: center; padding: .5rem 0 3.5rem; }
+  .dear { font-family: var(--display); font-size: 1.6rem; color: var(--olive-deep); margin: 1.75rem 0 .25rem; }
+  .std {
+    font-family: var(--body); font-style: italic; font-size: 1.25rem;
+    color: var(--beige-deep); margin: 0 0 1.25rem;
+  }
+  .names {
+    font-size: clamp(3.2rem, 15vw, 5.6rem);
+    line-height: .95; color: var(--olive);
+  }
+  .names .amp { display: block; font-size: .5em; color: var(--beige-deep); margin: .1em 0; }
+  .date {
+    display: flex; justify-content: center; align-items: baseline; gap: .6rem;
+    font-family: var(--display); color: var(--olive-deep);
+    font-size: clamp(1.9rem, 8vw, 2.6rem); margin: 1.75rem 0 .35rem;
+  }
+  .date i { width: .14em; height: .14em; border-radius: 50%; align-self: center; flex: none;
+    background: var(--olive); opacity: .55; }
+  .where { color: var(--ink-soft); margin: 0; }
+  .lead { max-width: 24rem; margin: 1.5rem auto 0; color: var(--ink-soft); }
+  .countdown { margin: 1.25rem 0 0; font-size: 1.1rem; font-style: italic; color: var(--olive); font-weight: 500; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 2rem; }
+
+  /* ---------- Venue ---------- */
+  .place {
+    background: var(--panel); color: var(--ink); border: 1px solid var(--mint-deep);
+    border-radius: 2rem; padding: 2.25rem 1.5rem;
+    position: relative; overflow: hidden;
+  }
+  .place h2 { font-size: 1.15rem; font-family: var(--body); font-style: italic; color: var(--olive); letter-spacing: .03em; margin-bottom: .75rem; }
+  .place h3 { font-size: clamp(2.2rem, 9vw, 3rem); margin-bottom: .2rem; }
+  .place .town { color: var(--olive-deep); margin-bottom: 1.25rem; }
+  .place p { max-width: var(--measure); color: var(--ink); }
+  .place .btn.ghost { color: var(--olive-deep); border-color: rgba(63,72,40,.35); background: rgba(255,255,255,.45); }
+  .place .btn.ghost:hover { background: rgba(255,255,255,.75); }
+  .place .actions { justify-content: flex-start; margin-top: 1.5rem; }
+  .hills { position: absolute; right: -10px; bottom: -6px; width: 70%; max-width: 340px; opacity: .35; pointer-events: none; }
+  .later { color: var(--ink-soft); margin: 1.5rem .25rem 0; max-width: var(--measure); }
+
+  /* ---------- RSVP ---------- */
+  .rsvp { margin-top: 3.5rem; padding: 2.25rem 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 2rem; }
+  .rsvp h2 { font-size: clamp(2rem, 8vw, 2.6rem); margin-bottom: .5rem; color: var(--olive); }
+  .rsvp .by { color: var(--ink-soft); }
+  .person { padding: 1.25rem 0; border-top: 1px solid var(--line); }
+  .person:first-of-type { border-top: 0; }
+  .person .who { font-family: var(--display); font-size: 1.45rem; margin-bottom: .75rem; }
+  .choice { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .choice label {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    min-height: 3rem; padding: .6rem; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--pearl); font-weight: 500; color: var(--ink-soft);
+  }
+  .choice input:checked + label { background: var(--mint); border-color: var(--mint-deep); color: var(--olive-deep); }
+  .choice input.no:checked + label { background: var(--beige); border-color: var(--beige); color: var(--ink); }
+  .choice input:focus-visible + label { outline: 2px solid var(--olive); outline-offset: 3px; }
+  .field { display: block; margin-top: 1rem; }
+  .field span { display: block; font-size: .92rem; font-weight: 500; color: var(--ink); margin-bottom: .35rem; }
+  .field input, .field textarea {
+    width: 100%; font: inherit; color: var(--ink);
+    padding: .8rem 1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--pearl);
+  }
+  .field textarea { min-height: 6rem; resize: vertical; }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--olive); box-shadow: 0 0 0 3px rgba(94,107,58,.15); }
+  .extras { border-top: 1px solid var(--line); margin-top: .5rem; padding-top: .5rem; }
+  .error { color: #8f3f2f; margin: 1rem 0 0; }
+  .submit { margin-top: 1.5rem; width: 100%; }
+
+  .done { text-align: center; padding: .5rem 0; }
+  .done .tick { width: 3.25rem; height: 3.25rem; margin: 0 auto 1rem; border-radius: 50%;
+    background: var(--pearl-2); border: 1px solid var(--line); display: grid; place-items: center; }
+  .done .tick svg { width: 1.4rem; height: 1.4rem; stroke: var(--olive-deep); }
+  .summary { list-style: none; padding: 0; margin: 1.25rem 0; text-align: left; }
+  .summary li { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-top: 1px solid var(--line); }
+  .summary li b { font-weight: 500; }
+  .summary .yes { color: var(--olive); }
+  .summary .no { color: var(--beige-deep); }
+
+  .loading { min-height: 70vh; display: grid; place-items: center; color: var(--ink-soft); }
+
+
+  .btn.submit { width: 100%; }
+  fieldset.person { border: 0; margin: 0; padding-inline: 0; }
+  .place { color: var(--ink); }
+  .place h3 { color: var(--olive-deep); }
+
+  /* Find-your-invite page */
+  .findpage { text-align: center; padding: .5rem 0 2rem; }
+  .findpage .names { margin-top: 1.5rem; }
+  .findpage .when { font-family: var(--display); font-size: 1.5rem; color: var(--olive); margin: 1.25rem 0 .25rem; }
+  .findpage .where { color: var(--ink-soft); }
+  .find { text-align: left; margin-top: 2.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 2rem; padding: 2rem 1.5rem; }
+  .find h2 { font-size: 2rem; margin-bottom: .4rem; color: var(--olive); }
+  .find p { color: var(--ink-soft); }
+  .msg { margin: 1rem 0 0; }
+  .matches { list-style: none; padding: 0; margin: .5rem 0 0; }
+  .matches button { display: block; width: 100%; text-align: left; padding: .9rem 1rem; margin-top: .5rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--pearl); color: var(--ink); font-family: var(--display); font-size: 1.3rem; cursor: pointer; }
+
+  /* ---------- Liquid-glass surfaces ---------- */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(40rem 26rem at 110% 55%, rgba(220, 237, 200, .55), transparent 70%),
+      radial-gradient(34rem 24rem at -10% 85%, rgba(216, 198, 168, .35), transparent 70%),
+      radial-gradient(30rem 20rem at 50% 105%, rgba(241, 248, 233, .9), transparent 70%);
+  }
+  .place, .find, .rsvp, .btn, .lang {
+    background: linear-gradient(140deg, rgba(255, 255, 255, .72) 0%, rgba(241, 248, 233, .5) 55%, rgba(241, 248, 233, .38) 100%);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    backdrop-filter: blur(22px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, .85);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, .95),
+      inset 0 -1px 1px rgba(255, 255, 255, .35),
+      inset 0 0 0 .5px rgba(94, 107, 58, .10),
+      0 10px 30px -8px rgba(63, 72, 40, .14),
+      0 1px 3px rgba(63, 72, 40, .06);
+  }
+  .place, .find, .rsvp { border-radius: 2rem; }
+  .btn.ghost, .place .btn.ghost {
+    background: linear-gradient(140deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .45));
+    color: var(--olive-deep);
+  }
+  .btn:hover, .btn.ghost:hover, .place .btn.ghost:hover {
+    background: linear-gradient(140deg, rgba(255, 255, 255, .95), rgba(241, 248, 233, .75));
+    border-color: rgba(255, 255, 255, .95);
+  }
+  .btn:active { transform: scale(.98); }
+  .lang button[aria-pressed="true"] {
+    background: rgba(241, 248, 233, .95); color: var(--olive-deep);
+    box-shadow: inset 0 1px 0 #fff, 0 1px 4px rgba(63, 72, 40, .14);
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .place, .find, .rsvp, .btn, .lang { background: #f6faf0; }
+  }
+
+
+  /* ---------- Catch the bride ---------- */
+  .game-block { margin: 4rem 0 0; text-align: center; }
+  .game-block h2 { font-size: clamp(2rem, 8vw, 2.6rem); color: var(--olive); margin-bottom: .35rem; }
+  .game-block .game-box { text-align: left; }
+  .game-box { margin-top: 1.25rem; border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,.9);
+    box-shadow: inset 0 1px 0 #fff, 0 10px 30px -8px rgba(63,72,40,.16); background: #fbfcf7; }
+  .game-box canvas { display: block; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; user-select: none; }
+  .game-box canvas:focus-visible { outline: 2px solid var(--olive); outline-offset: -4px; }
+  .how { font-style: italic; color: var(--beige-deep); margin: .5rem auto 0; max-width: 26rem; }
+
+  .btn[disabled] { opacity: .6; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="monogram" href="#top">A<span>&amp;</span>D</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" data-lang="af" aria-pressed="false">AF</button>
+      <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+    </div>
+  </header>
+  <main id="app"></main>
+  <footer class="footer" id="footer"></footer>
+</div>
+<script src="/config.js"></script>
+<script>
+
+window.G = {
+  en: { playTitle: 'Catch the bride', playLead: 'Help Dirk catch Ané.', playHow: 'Tap to jump. Tap twice for a double jump.',
+    tapStart: 'Tap to start', oops: 'Oops! Tap to try again', caught: 'Caught her! See you on 18 December', again: 'tap to play again',
+    best: 'Best', score: 'Score', level: 'Level', board: 'Leaderboard', you: 'you', someone: 'Someone', boardEmpty: 'No scores yet. Be the first.', boardFail: 'Your score could not be added to the leaderboard.' },
+  af: { playTitle: 'Vang die bruid', playLead: 'Help Dirk om Ané te vang.', playHow: "Tik om te spring. Tik twee keer vir 'n dubbelsprong.",
+    tapStart: 'Tik om te begin', oops: 'Oeps! Tik om weer te probeer', caught: 'Gevang! Sien jou op 18 Desember', again: 'tik om weer te speel',
+    best: 'Beste', score: 'Telling', level: 'Vlak', board: 'Ranglys', you: 'jy', someone: 'Iemand', boardEmpty: 'Nog geen tellings nie. Wees die eerste.', boardFail: 'Jou telling kon nie by die ranglys gevoeg word nie.' },
+  nl: { playTitle: 'Vang de bruid', playLead: 'Help Dirk om Ané te vangen.', playHow: 'Tik om te springen. Tik twee keer voor een dubbele sprong.',
+    tapStart: 'Tik om te starten', oops: 'Oeps! Tik om het opnieuw te proberen', caught: 'Gevangen! Tot 18 december', again: 'tik om opnieuw te spelen',
+    best: 'Beste', score: 'Score', level: 'Level', board: 'Ranglijst', you: 'jij', someone: 'Iemand', boardEmpty: 'Nog geen scores. Wees de eerste.', boardFail: 'Je score kon niet aan de ranglijst worden toegevoegd.' },
+};
+// "Catch the bride": a small endless-runner with levels.
+// Tap = jump, hold = higher, tap again in the air = double jump.
+// Birds: low ones must be jumped, high ones you run under. Rings give points and close the gap.
+window.mountGame = (canvas, text, hooks = {}) => {
+  const ctx = canvas.getContext('2d');
+  const H = 220, GROUND = 184, TARGET = 20, G = 1750;
+  const C = {
+    sky: '#fbfcf7', hillFar: '#dfe7d2', hillNear: '#cdd9bb', ground: '#d8c6a8', dot: '#bfa985',
+    suit: '#2b2e24', shirt: '#ffffff', tie: '#4b5730', skin: '#e9c7a3', hairM: '#d9b86c',
+    dress: '#ffffff', dressLine: '#e6e0d3', hairF: '#e3c27a', veil: 'rgba(255,255,255,.85)',
+    bush: '#6f7d4a', bush2: '#8b9a62', protea: '#e3a6a1', barrel: '#8a5f3a', hoop: '#4e3a26', rock: '#b8ab92',
+    bird: '#4a4a52', birdDot: '#e9e6e0', ring: '#c9a24a', ink: '#141414', olive: '#4b5730', heart: '#c9605f',
+  };
+  let W = 360, dpr = 1;
+  let state = 'idle';                 // idle | run | over | won
+  let t = 0, speed = 0, dist = 0, cleared = 0, rings = 0, score = 0, spawnIn = 0, elapsed = 0, wonT = 0;
+  let obstacles = [], pickups = [], floats = [], hearts = [], raf = 0, last = 0, holding = false, holdT = 0;
+  const groom = { x: 46, y: 0, vy: 0, w: 18, h: 42, jumps: 0 };
+  const bride = { x: 0, y: 0, vy: 0, w: 22, h: 42 };
+  const best = () => parseInt(store.get('troufees:best') || '0', 10) || 0;
+  const level = () => cleared < 5 ? 1 : cleared < 11 ? 2 : 3;
+
+  function resize() {
+    W = Math.max(280, Math.round(canvas.parentElement.clientWidth));
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (state !== 'run') { placeBride(); draw(); }
+  }
+  const startGap = () => Math.min(W * .5, 230);
+  const progress = () => Math.min(1, (cleared + rings * .5) / TARGET);
+  const gapNow = () => startGap() * (1 - progress());
+  function placeBride() { bride.x = groom.x + 34 + gapNow(); }
+
+  function reset() {
+    t = 0; dist = 0; cleared = 0; rings = 0; score = 0; elapsed = 0; wonT = 0; speed = 250; spawnIn = 1.1;
+    obstacles = []; pickups = []; floats = []; hearts = [];
+    Object.assign(groom, { x: 46, y: 0, vy: 0, jumps: 0 }); bride.y = 0; bride.vy = 0;
+    placeBride();
+  }
+
+  function press() {
+    if (state !== 'run') { reset(); state = 'run'; loop(); return; }
+    holding = true; holdT = 0;
+    if (groom.y === 0) { groom.vy = 560; groom.jumps = 1; }
+    else if (groom.jumps < 2) { groom.vy = 470; groom.jumps = 2; }
+  }
+  function release() { holding = false; if (state === 'run' && groom.vy > 230 && groom.jumps === 1) groom.vy = 230; }
+
+  function spawn() {
+    const lv = level();
+    const pool = ['bush', 'barrel', 'rock'];
+    if (lv >= 2) pool.push('double', 'double');
+    if (lv >= 3) pool.push('birdLow', 'birdHigh', 'birdHigh');
+    const k = pool[Math.floor(Math.random() * pool.length)];
+    let o;
+    if (k === 'barrel') o = { w: 20, h: 26, lift: 0 };
+    else if (k === 'rock') o = { w: 22, h: 14, lift: 0 };
+    else if (k === 'double') o = { w: 54, h: 26, lift: 0 };
+    else if (k === 'birdLow') o = { w: 26, h: 14, lift: 30 };
+    else if (k === 'birdHigh') o = { w: 26, h: 14, lift: 60 };
+    else o = { w: 24 + Math.random() * 8, h: 20 + Math.random() * 8, lift: 0 };
+    obstacles.push({ k, x: W + 20, ...o, passed: false, brideJumped: false, flap: Math.random() * 6 });
+    if (lv >= 2 && Math.random() < .45) pickups.push({ x: W + 20 + o.w / 2 + (Math.random() < .5 ? 0 : 90), lift: 78 + Math.random() * 18, got: false });
+    const minGap = k === 'double' ? 1.05 : 0.85;
+    spawnIn = minGap * (290 / speed) + Math.random() * .7 + .2;
+  }
+
+  function hit(a, b) { return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y; }
+
+  function step(dt) {
+    t += dt;
+    if (state === 'run') {
+      elapsed += dt;
+      speed = Math.min(250 + elapsed * 7 + (level() - 1) * 25, 520);
+      dist += speed * dt;
+      spawnIn -= dt; if (spawnIn <= 0) spawn();
+    } else if (state === 'won') {
+      wonT += dt; speed = Math.max(0, speed - 600 * dt);
+      if (groom.x < bride.x - 20) groom.x += 90 * dt;
+      if (wonT < 2.5 && Math.random() < dt * 9) hearts.push({ x: (groom.x + bride.x) / 2 + 10, y: GROUND - 60, vy: -30 - Math.random() * 30, vx: (Math.random() - .5) * 40, life: 1.6 });
+    }
+    for (const o of obstacles) o.x -= speed * dt;
+    for (const p of pickups) p.x -= speed * dt;
+    obstacles = obstacles.filter(o => o.x + o.w > -20);
+    pickups = pickups.filter(p => p.x > -20 && !p.got);
+
+    for (const o of obstacles) {
+      if (o.k === 'birdHigh' || o.brideJumped) continue;
+      if (o.x - (bride.x + bride.w) < speed * 0.1 && o.x > bride.x - o.w) { if (bride.y === 0) bride.vy = o.k === 'double' || o.k === 'birdLow' ? 560 : 480; o.brideJumped = true; }
+    }
+    if (holding && groom.jumps === 1) { holdT += dt; if (holdT < .2) groom.vy += G * .55 * dt; }
+    for (const who of [groom, bride]) {
+      if (who.y > 0 || who.vy > 0) { who.vy -= G * dt; who.y = Math.max(0, who.y + who.vy * dt); if (who.y === 0) { who.vy = 0; if (who === groom) groom.jumps = 0; } }
+    }
+
+    if (state === 'run') {
+      const gBox = { x: groom.x + 4, y: GROUND - groom.h - groom.y + 3, w: groom.w - 8, h: groom.h - 3 };
+      for (const o of obstacles) {
+        const oBox = { x: o.x + 3, y: GROUND - o.lift - o.h + 3, w: o.w - 6, h: o.h - 4 };
+        if (hit(gBox, oBox)) { end('over'); return; }
+        if (!o.passed && o.x + o.w < groom.x) { o.passed = true; cleared++; score += o.k === 'double' ? 20 : o.k.startsWith('bird') ? 15 : 10; }
+      }
+      for (const p of pickups) {
+        if (!p.got && Math.abs(p.x - (groom.x + groom.w / 2)) < 16 && Math.abs((GROUND - p.lift) - (GROUND - groom.h / 2 - groom.y)) < 26) {
+          p.got = true; rings++; score += 25; floats.push({ x: p.x, y: GROUND - p.lift - 10, life: .9, txt: '+25' });
+        }
+      }
+      const target = groom.x + 34 + gapNow();
+      bride.x += (target - bride.x) * Math.min(1, dt * 3);
+      if (progress() >= 1) { score += Math.max(0, 300 - Math.round(elapsed) * 5); end('won'); }
+    }
+    for (const f of floats) { f.y -= 30 * dt; f.life -= dt; }
+    floats = floats.filter(f => f.life > 0);
+    for (const h of hearts) { h.y += h.vy * dt; h.x += h.vx * dt; h.life -= dt; }
+    hearts = hearts.filter(h => h.life > 0);
+  }
+
+  function end(how) {
+    state = how; holding = false; wonT = 0;
+    if (score > best()) store.set('troufees:best', String(score));
+    hooks.onEnd && hooks.onEnd(score, how === 'won');
+  }
+
+  // ---------- drawing ----------
+  function ridge(offset, base, amp, color, seed) {
+    ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(0, GROUND);
+    const span = 90;
+    for (let x = -span; x <= W + span; x += 30) {
+      const gx = x + (offset % span);
+      const n = Math.sin((x - offset) * 0.021 + seed) * 0.5 + Math.sin((x - offset) * 0.047 + seed * 2) * 0.35;
+      ctx.lineTo(gx, base - amp * (0.55 + n * 0.45) - ((Math.floor((x - offset) / 30) % 3 === 0) ? amp * .18 : 0));
+    }
+    ctx.lineTo(W, GROUND); ctx.closePath(); ctx.fill();
+  }
+  function drawGroom(x, y, phase) {
+    const top = GROUND - groom.h - y;
+    const run = state === 'run' && y === 0 ? Math.sin(phase) : 0;
+    ctx.fillStyle = C.suit;
+    ctx.fillRect(x + 4, top + 30, 4, 12 + run * 2); ctx.fillRect(x + 10, top + 30, 4, 12 - run * 2);
+    ctx.fillRect(x + 2, top + 14, 14, 18);
+    ctx.fillStyle = C.shirt; ctx.beginPath(); ctx.moveTo(x + 6, top + 14); ctx.lineTo(x + 12, top + 14); ctx.lineTo(x + 9, top + 22); ctx.fill();
+    ctx.fillStyle = C.tie; ctx.fillRect(x + 8, top + 15, 2, 7);
+    ctx.fillStyle = C.suit; ctx.fillRect(x + 14, top + 16 - run * 2, 4, 10);
+    ctx.fillStyle = C.skin; ctx.beginPath(); ctx.arc(x + 9, top + 7, 6, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = C.hairM; ctx.fillRect(x + 3, top, 12, 4);
+  }
+  function drawBride(x, y, phase) {
+    const top = GROUND - bride.h - y;
+    const run = (state === 'run' || state === 'idle') && y === 0 ? Math.sin(phase) : 0;
+    ctx.fillStyle = C.veil; ctx.beginPath(); ctx.moveTo(x + 6, top + 2); ctx.quadraticCurveTo(x - 10 - run * 3, top + 18, x - 4, top + 34); ctx.lineTo(x + 6, top + 12); ctx.fill();
+    ctx.fillStyle = C.dress; ctx.strokeStyle = C.dressLine; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x + 8, top + 13); ctx.lineTo(x + 14, top + 13); ctx.lineTo(x + 22 + run, GROUND - y); ctx.lineTo(x - 1 - run, GROUND - y); ctx.closePath(); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = C.skin; ctx.beginPath(); ctx.arc(x + 11, top + 7, 5.5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = C.hairF; ctx.beginPath(); ctx.arc(x + 10, top + 5, 6, Math.PI, Math.PI * 2); ctx.fill(); ctx.fillRect(x + 4, top + 5, 3, 9);
+    ctx.fillStyle = C.bush; ctx.beginPath(); ctx.arc(x + 17, top + 22, 3.5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = C.protea; ctx.beginPath(); ctx.arc(x + 18, top + 20, 2.2, 0, Math.PI * 2); ctx.fill();
+  }
+  function bushAt(x, w, h) {
+    ctx.fillStyle = C.bush; ctx.beginPath(); ctx.ellipse(x + w / 2, GROUND - h / 2, w / 2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = C.bush2; ctx.beginPath(); ctx.ellipse(x + w * .35, GROUND - h * .62, w * .28, h * .3, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = C.protea; ctx.beginPath(); ctx.arc(x + w * .62, GROUND - h + 4, 3.5, 0, Math.PI * 2); ctx.fill();
+  }
+  function drawObstacle(o) {
+    const top = GROUND - o.h;
+    if (o.k === 'barrel') {
+      ctx.fillStyle = C.barrel; ctx.beginPath(); ctx.roundRect(o.x, top, o.w, o.h, 5); ctx.fill();
+      ctx.fillStyle = C.hoop; ctx.fillRect(o.x, top + 5, o.w, 2.5); ctx.fillRect(o.x, top + o.h - 7, o.w, 2.5);
+    } else if (o.k === 'rock') {
+      ctx.fillStyle = C.rock; ctx.beginPath(); ctx.ellipse(o.x + o.w / 2, GROUND - o.h / 2 + 1, o.w / 2, o.h / 2 + 1, 0, 0, Math.PI * 2); ctx.fill();
+    } else if (o.k === 'double') {
+      bushAt(o.x, 28, 26); bushAt(o.x + 26, 28, 22);
+    } else if (o.k.startsWith('bird')) {           // a guinea fowl
+      const cy = GROUND - o.lift - o.h / 2, cx = o.x + o.w / 2, f = Math.sin(t * 14 + o.flap);
+      ctx.fillStyle = C.bird; ctx.beginPath(); ctx.ellipse(cx, cy, 11, 7, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(cx - 2, cy - 2); ctx.lineTo(cx + 6, cy - 10 - f * 5); ctx.lineTo(cx + 9, cy - 1); ctx.fill();
+      ctx.beginPath(); ctx.arc(cx - 11, cy - 3, 3.5, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#5b86b3'; ctx.fillRect(cx - 13, cy - 2, 2, 2);
+      ctx.fillStyle = C.birdDot; for (let k = 0; k < 5; k++) ctx.fillRect(cx - 6 + k * 3, cy + (k % 2 ? 1 : -1), 1.2, 1.2);
+    } else bushAt(o.x, o.w, o.h);
+  }
+  function drawRing(p) {
+    const y = GROUND - p.lift, glow = .6 + Math.sin(t * 6 + p.x * .05) * .4;
+    ctx.strokeStyle = C.ring; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(p.x, y, 7, 0, Math.PI * 2); ctx.stroke();
+    ctx.fillStyle = `rgba(255,255,255,${glow})`; ctx.beginPath(); ctx.arc(p.x - 3, y - 6, 2, 0, Math.PI * 2); ctx.fill();
+  }
+  function heart(x, y, s, a) {
+    ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = C.heart; ctx.beginPath();
+    ctx.moveTo(x, y + s * .3);
+    ctx.bezierCurveTo(x, y, x - s * .5, y, x - s * .5, y + s * .3);
+    ctx.bezierCurveTo(x - s * .5, y + s * .6, x, y + s * .8, x, y + s);
+    ctx.bezierCurveTo(x, y + s * .8, x + s * .5, y + s * .6, x + s * .5, y + s * .3);
+    ctx.bezierCurveTo(x + s * .5, y, x, y, x, y + s * .3);
+    ctx.fill(); ctx.restore();
+  }
+  function centerText(lines) {
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'rgba(251,252,247,.85)'; ctx.fillRect(0, 56, W, lines.length * 26 + 16);
+    lines.forEach(([str, size, color], i) => {
+      ctx.fillStyle = color; ctx.font = `${size}px "EB Garamond", Georgia, serif`;
+      ctx.fillText(str, W / 2, 82 + i * 26);
+    });
+  }
+  function draw() {
+    const tx = text();
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = C.sky; ctx.fillRect(0, 0, W, H);
+    ridge(-dist * .08, GROUND - 52, 52, C.hillFar, 1.3);
+    ridge(-dist * .2, GROUND - 22, 30, C.hillNear, 4.1);
+    ctx.fillStyle = C.ground; ctx.fillRect(0, GROUND, W, H - GROUND);
+    ctx.fillStyle = C.dot;
+    for (let i = 0; i < W / 18 + 2; i++) { const x = ((i * 18 - dist) % (W + 36) + W + 36) % (W + 36) - 18; ctx.fillRect(x, GROUND + 8 + (i % 3) * 7, 3, 1.5); }
+    pickups.forEach(drawRing);
+    obstacles.forEach(drawObstacle);
+    drawBride(bride.x, bride.y, t * 16 + 1);
+    drawGroom(groom.x, groom.y, t * 18);
+    hearts.forEach(h => heart(h.x, h.y, 10, Math.min(1, h.life)));
+    ctx.font = '600 13px "EB Garamond", Georgia, serif'; ctx.textAlign = 'center';
+    floats.forEach(f => { ctx.fillStyle = `rgba(201,162,74,${Math.min(1, f.life * 1.5)})`; ctx.fillText(f.txt, f.x, f.y); });
+
+    ctx.textAlign = 'left'; ctx.font = '15px "EB Garamond", Georgia, serif'; ctx.fillStyle = C.olive;
+    ctx.fillText(`${tx.level} ${level()}`, 12, 22);
+    ctx.fillStyle = 'rgba(75,87,48,.15)'; ctx.fillRect(12, 30, 110, 4);
+    ctx.fillStyle = C.olive; ctx.fillRect(12, 30, 110 * progress(), 4);
+    ctx.textAlign = 'right'; ctx.fillStyle = C.ink; ctx.fillText(`${tx.score} ${score}`, W - 12, 22);
+    const b = best(); if (b) { ctx.fillStyle = C.olive; ctx.font = '13px "EB Garamond", Georgia, serif'; ctx.fillText(`${tx.best} ${b}`, W - 12, 38); }
+
+    if (state === 'idle') centerText([[tx.tapStart, 22, C.ink]]);
+    if (state === 'over') centerText([[`${tx.score} ${score}`, 22, C.ink], [tx.oops, 16, C.olive]]);
+    if (state === 'won' && speed === 0) centerText([[tx.caught, 20, C.ink], [`${tx.score} ${score} · ${tx.again}`, 15, C.olive]]);
+  }
+  function loop() {
+    cancelAnimationFrame(raf);
+    const tick = ts => {
+      const dt = Math.min(0.033, last ? (ts - last) / 1000 : 0.016); last = ts;
+      step(dt); draw();
+      if (state === 'run' || (state === 'won' && wonT < 4.5)) raf = requestAnimationFrame(tick);
+      else last = 0;
+    };
+    last = 0; raf = requestAnimationFrame(tick);
+  }
+
+  canvas.addEventListener('pointerdown', e => { e.preventDefault(); press(); });
+  canvas.addEventListener('pointerup', release);
+  canvas.addEventListener('pointercancel', release);
+  canvas.addEventListener('pointerleave', release);
+  const isKey = e => e.code === 'Space' || e.code === 'ArrowUp';
+  window.__catchKey = e => {
+    if (!isKey(e) || /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.type === 'keyup') { release(); return; }
+    if (e.repeat) { e.preventDefault(); return; }
+    if (state === 'run' || e.target === canvas) { e.preventDefault(); press(); }
+  };
+  if (!window.__catchKeyBound) {
+    window.__catchKeyBound = true;
+    document.addEventListener('keydown', e => window.__catchKey && window.__catchKey(e));
+    document.addEventListener('keyup', e => window.__catchKey && window.__catchKey(e));
+  }
+  let ro = null;
+  if ('ResizeObserver' in window) { ro = new ResizeObserver(resize); ro.observe(canvas.parentElement); } else addEventListener('resize', resize);
+  resize();
+  return { destroy: () => { cancelAnimationFrame(raf); ro && ro.disconnect(); state = 'idle'; } };
+};
+
+
+window.T = {
+  en: {
+    dear: 'Dear',
+    country: 'South Africa',
+    region: 'Western Cape, South Africa',
+    saveTheDate: 'Save the date',
+    gettingMarried: "We're getting married, and we'd love you there.",
+    daysToGo: n => n === 1 ? 'One more day' : `${n} days to go`,
+    today: 'Today is the day',
+    addCalendar: 'Add to calendar',
+    replyNow: 'RSVP',
+    thePlace: 'The place',
+    placeNote: 'A Cape Dutch farm from 1792 at the foot of the Langeberg, just outside Swellendam. December is midsummer in the Western Cape, so expect long, warm days.',
+    celebrate: 'We look forward to celebrating with you!',
+    detailsFollow: "The invitation with RSVP, times, dress code and places to stay will follow later. Your link stays the same, so check back here.",
+    googleMaps: 'Google Maps',
+    appleMaps: 'Apple Maps',
+    rsvpTitle: single => single ? 'Will you be there?' : 'Will you be there?',
+    rsvpBy: d => `Please let us know by ${d}.`,
+    rsvpLater: 'The formal invitation and RSVP will follow. For now, keep the date free.',
+    rsvpClosed: d => `RSVPs closed on ${d}. Something changed? Get in touch with us directly.`,
+    coming: 'Coming',
+    notComing: "Can't make it",
+    dietary: 'Dietary needs or allergies',
+    dietaryHint: 'Leave empty if none',
+    song: 'A song that will get you dancing',
+    message: 'Anything you want to tell us',
+    send: 'Send RSVP',
+    sending: 'Sending…',
+    update: 'Update RSVP',
+    sent: 'RSVP sent. Thank you!',
+    yourReply: 'Your reply',
+    change: 'Change my RSVP',
+    pickEach: 'Choose coming or can\'t make it for everyone on this invite.',
+    failed: 'Your RSVP was not sent. Check your connection and try again.',
+    remembered: 'This page is remembered on this phone.',
+    notYou: 'Not you? Find your invite',
+    findTitle: 'Find your invite',
+    findLead: 'Type your first and last name as they appear on your invitation.',
+    findLabel: 'Full name',
+    findBtn: 'Find my invite',
+    findNone: 'No invite found under that name. Check the spelling, or use the link we sent you.',
+    findPick: 'Which one is yours?',
+    notFoundLink: "That link doesn't match an invite. Find yours by name below.",
+  },
+  nl: {
+    dear: 'Lieve',
+    country: 'Zuid-Afrika',
+    region: 'West-Kaap, Zuid-Afrika',
+    saveTheDate: 'Save the date',
+    gettingMarried: 'We gaan trouwen, en we zouden het geweldig vinden als je erbij bent.',
+    daysToGo: n => n === 1 ? 'Nog één dag' : `Nog ${n} dagen`,
+    today: 'Vandaag is het zover',
+    addCalendar: 'Zet in je agenda',
+    replyNow: 'RSVP',
+    thePlace: 'De locatie',
+    placeNote: 'Een Kaaps-Hollandse boerderij uit 1792 aan de voet van de Langeberg, net buiten Swellendam. December is hartje zomer in de West-Kaap, dus reken op lange, warme dagen.',
+    celebrate: 'We kijken ernaar uit om het samen met jou te vieren!',
+    detailsFollow: 'De uitnodiging met RSVP, tijden, dresscode en overnachtingsplekken volgen later. Je link blijft hetzelfde, dus kijk hier later nog eens.',
+    googleMaps: 'Google Maps',
+    appleMaps: 'Apple Maps',
+    rsvpTitle: single => single ? 'Ben je erbij?' : 'Zijn jullie erbij?',
+    rsvpBy: d => `Laat het ons alsjeblieft weten vóór ${d}.`,
+    rsvpLater: 'De officiële uitnodiging en RSVP volgen later. Houd voor nu de datum vrij.',
+    rsvpClosed: d => `De RSVP is gesloten op ${d}. Is er iets veranderd? Neem dan direct contact met ons op.`,
+    coming: 'Aanwezig',
+    notComing: 'Kan niet komen',
+    dietary: 'Dieetwensen of allergieën',
+    dietaryHint: 'Leeg laten als je niets hebt',
+    song: 'Een nummer waarop jij de dansvloer op gaat',
+    message: 'Wil je ons nog iets laten weten?',
+    send: 'RSVP versturen',
+    sending: 'Versturen…',
+    update: 'RSVP bijwerken',
+    sent: 'RSVP verstuurd. Dank je wel!',
+    yourReply: 'Jouw antwoord',
+    change: 'Mijn RSVP wijzigen',
+    pickEach: 'Kies "aanwezig" of "kan niet komen" voor iedereen op deze uitnodiging.',
+    failed: 'Je RSVP is niet verstuurd. Controleer je verbinding en probeer het opnieuw.',
+    remembered: 'Deze pagina wordt onthouden op deze telefoon.',
+    notYou: 'Niet jij? Zoek je uitnodiging',
+    findTitle: 'Zoek je uitnodiging',
+    findLead: 'Typ je voor- en achternaam zoals op je uitnodiging.',
+    findLabel: 'Volledige naam',
+    findBtn: 'Zoek mijn uitnodiging',
+    findNone: 'Geen uitnodiging gevonden onder die naam. Controleer de spelling, of gebruik de link die we je hebben gestuurd.',
+    findPick: 'Welke is van jou?',
+    notFoundLink: 'Die link hoort niet bij een uitnodiging. Zoek de jouwe hieronder op naam.',
+  },
+  af: {
+    dear: 'Liewe',
+    country: 'Suid-Afrika',
+    region: 'Wes-Kaap, Suid-Afrika',
+    saveTheDate: 'Merk die datum',
+    gettingMarried: 'Ons gaan trou, en ons wil jou graag daar hê!',
+    daysToGo: n => n === 1 ? 'Nog een dag' : `Nog ${n} dae`,
+    today: 'Vandag is die dag',
+    addCalendar: 'Voeg by kalender',
+    replyNow: 'RSVP',
+    thePlace: 'Die plek',
+    placeNote: "'n Kaaps-Hollandse plaas uit 1792 aan die voet van die Langeberg, net buite Swellendam. Desember is hoogsomer in die Wes-Kaap, so verwag lekker warm, lang somerdae.",
+    celebrate: 'Ons sien uit om saam met jou te vier!',
+    detailsFollow: "Die uitnodiging met RSVP, tye, drag en blyplek volg later. Jou skakel bly dieselfde, so kom kyk weer hier.",
+    googleMaps: 'Google Maps',
+    appleMaps: 'Apple Maps',
+    rsvpTitle: single => single ? 'Sal jy daar wees?' : 'Sal julle daar wees?',
+    rsvpBy: d => `Laat weet ons asseblief voor ${d}.`,
+    rsvpLater: 'Die amptelike uitnodiging en RSVP volg later. Hou vir eers net die datum vry.',
+    rsvpClosed: d => `RSVP's het op ${d} gesluit. Het iets verander? Kontak ons direk.`,
+    coming: 'Kom',
+    notComing: 'Kan nie kom nie',
+    dietary: 'Dieetvereistes of allergieë',
+    dietaryHint: 'Los leeg as daar niks is nie',
+    song: "'n Liedjie wat jou sal laat dans",
+    message: 'Enigiets wat jy vir ons wil sê',
+    send: 'Stuur RSVP',
+    sending: 'Stuur…',
+    update: 'Werk RSVP by',
+    sent: 'RSVP gestuur. Baie dankie!',
+    yourReply: 'Jou antwoord',
+    change: 'Verander my RSVP',
+    pickEach: 'Kies "kom" of "kan nie kom nie" vir elkeen op hierdie uitnodiging.',
+    failed: 'Jou RSVP is nie gestuur nie. Kyk jou verbinding en probeer weer.',
+    remembered: 'Hierdie bladsy word op hierdie foon onthou.',
+    notYou: 'Nie jy nie? Soek jou uitnodiging',
+    findTitle: 'Soek jou uitnodiging',
+    findLead: 'Tik jou naam en van soos op jou uitnodiging.',
+    findLabel: 'Volle naam',
+    findBtn: 'Soek my uitnodiging',
+    findNone: "Geen uitnodiging onder daardie naam nie. Kyk die spelling, of gebruik die skakel wat ons vir jou gestuur het.",
+    findPick: 'Watter een is joune?',
+    notFoundLink: 'Daardie skakel pas nie by \'n uitnodiging nie. Soek joune hieronder op naam.',
+  },
+};
+
+window.fmtDate = (iso, lang, opts = { day: 'numeric', month: 'long', year: 'numeric' }) => {
+  const d = new Date(`${iso}T12:00:00`);
+  try { return new Intl.DateTimeFormat(lang === 'af' ? 'af-ZA' : lang === 'nl' ? 'nl-NL' : 'en-GB', opts).format(d); }
+  catch { return d.toDateString(); }
+};
+
+window.store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+  del(k) { try { localStorage.removeItem(k); } catch {} },
+};
+
+
+
+
+</script>
+<script>
+// ---------- Settings ----------
+const SITE = {
+  couple: { first: 'Ané', second: 'Dirk' },
+  date: '2027-12-18',
+  venue: { name: 'Joubertsdal', town: 'Swellendam', region: 'Western Cape, South Africa', mapsQuery: 'Joubertsdal Country Estate, R60, Swellendam' },
+  defaultLang: 'en',
+};
+// The Google Apps Script web-app URL comes from config.js (window.TROUFEES_API).
+const API = (window.TROUFEES_API || '').trim();
+
+// Text for the name gate (the rest of the page text lives in T and G).
+const N = {
+  en: { welcome: 'Welcome', gateLead: 'Please enter your name and surname to open your invitation.', nameLabel: 'Name and surname',
+        open: 'Open my invitation', checking: 'One moment…', needBoth: 'Please type both your name and your surname.',
+        noMatch: "We couldn't find that name on this invitation. Type it as it appears on the invite, or ask Ané or Dirk for your link.",
+        failed: 'Something went wrong. Check your connection and try again.', notYou: 'Not you? Enter a different name' },
+  af: { welcome: 'Welkom', gateLead: 'Tik asseblief jou naam en van om jou uitnodiging oop te maak.', nameLabel: 'Naam en van',
+        open: 'Maak my uitnodiging oop', checking: 'Net \'n oomblik…', needBoth: 'Tik asseblief jou naam én van.',
+        noMatch: 'Ons kon nie daardie naam op hierdie uitnodiging vind nie. Tik dit soos op die uitnodiging, of vra Ané of Dirk vir jou skakel.',
+        failed: 'Iets het verkeerd geloop. Kyk jou verbinding en probeer weer.', notYou: 'Nie jy nie? Tik \'n ander naam' },
+  nl: { welcome: 'Welkom', gateLead: 'Vul je voor- en achternaam in om je uitnodiging te openen.', nameLabel: 'Voor- en achternaam',
+        open: 'Open mijn uitnodiging', checking: 'Even geduld…', needBoth: 'Vul zowel je voornaam als je achternaam in.',
+        noMatch: 'We konden die naam niet vinden bij deze uitnodiging. Typ hem zoals op de uitnodiging, of vraag Ané of Dirk om je link.',
+        failed: 'Er ging iets mis. Controleer je verbinding en probeer het opnieuw.', notYou: 'Niet jij? Vul een andere naam in' },
+};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const icon = {
+  cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>',
+  pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>',
+};
+const SCENE_ALT = { af: 'Waterverfskildery van die kapel by Joubertsdal met die Langeberg agter', nl: 'Aquarel van de kapel op Joubertsdal met de Langeberg erachter', en: 'Watercolour of the chapel at Joubertsdal with the Langeberg behind it' };
+
+// Personal link: stoffbergtroufees.com/g/<code>  (also accepts ?g=<code>)
+const CODE = (() => {
+  const m = location.pathname.match(/\/g\/([A-Za-z0-9_-]+)/);
+  return (m ? m[1] : new URLSearchParams(location.search).get('g') || '').toLowerCase();
+})();
+const KEY = 'troufees:' + (CODE || 'home');
+
+let me = null;                        // { code, greeting, names, lang, name }
+try { me = JSON.parse(store.get(KEY)); } catch {}
+let lang = store.get('lang') || (me && me.lang) || (/^(af|nl)/.test(navigator.language || '') ? navigator.language.slice(0, 2) : SITE.defaultLang);
+let firstPaint = true;
+
+// ---------- Talking to the Google Sheet ----------
+async function call(action, extra) {
+  const body = JSON.stringify({ action, code: CODE, lang, ua: navigator.userAgent.slice(0, 200), ...extra });
+  if (!API) return demo(action, extra);
+  const res = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body });
+  if (!res.ok) throw new Error('http ' + res.status);
+  return res.json();
+}
+function track(action, extra) {          // fire-and-forget (survives the page opening a new tab)
+  if (!API) return;
+  const body = JSON.stringify({ action, code: (me && me.code) || CODE, name: me && me.name, lang, ua: navigator.userAgent.slice(0, 200), ...extra });
+  try { fetch(API, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body }); } catch {}
+}
+// Before the sheet is connected: accept any full name so the page can be tried out.
+function demo(action, extra) {
+  if (action !== 'verify') return { ok: true };
+  const first = extra.name.trim().split(/\s+/)[0];
+  return { ok: true, code: CODE || 'demo', greeting: first, names: [extra.name.trim()], lang };
+}
+
+// ---------- Rendering ----------
+function setLangButtons() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+}
+function render() {
+  setLangButtons();
+  if (me) renderInvite(); else renderGate();
+  const scene = $('.scene');
+  if (scene && !firstPaint) scene.style.animation = 'none';
+  firstPaint = false;
+}
+
+function renderGate(msg) {
+  if (window.__game) { window.__game.destroy(); window.__game = null; }
+  const t = T[lang], n = N[lang];
+  $('#app').innerHTML = `<div class="findpage">
+    <img class="scene" src="/chapel.webp" alt="${SCENE_ALT[lang]}">
+    <h1 class="names">${esc(SITE.couple.first)}<span class="amp">&amp;</span>${esc(SITE.couple.second)}</h1>
+    <p class="when">${fmtDate(SITE.date, lang)}</p>
+    <p class="where">${esc(SITE.venue.name)}, ${esc(SITE.venue.town)}, ${t.country}</p>
+    <section class="find">
+      <h2>${n.welcome}</h2><p>${n.gateLead}</p>
+      <form id="gate" novalidate>
+        <label class="field"><span>${n.nameLabel}</span><input id="fname" name="name" autocomplete="name" autocapitalize="words" required></label>
+        <p class="error" id="err" role="alert" ${msg ? '' : 'hidden'}>${msg ? esc(msg) : ''}</p>
+        <button class="btn submit" type="submit" id="go">${n.open}</button>
+      </form>
+    </section></div>`;
+  $('#footer').innerHTML = '';
+  $('#gate').addEventListener('submit', async e => {
+    e.preventDefault();
+    const name = $('#fname').value.trim().replace(/\s+/g, ' ');
+    const err = $('#err'), go = $('#go');
+    if (name.split(' ').length < 2) { err.textContent = n.needBoth; err.hidden = false; return; }
+    err.hidden = true; go.disabled = true; go.textContent = n.checking;
+    try {
+      const r = await call('verify', { name });
+      if (!r.ok) { err.textContent = n.noMatch; err.hidden = false; go.disabled = false; go.textContent = n.open; return; }
+      me = { code: r.code, greeting: r.greeting, names: r.names, lang: r.lang || lang, name: r.name || name };
+      store.set(KEY, JSON.stringify(me));
+      if (r.code) store.set('troufees:' + r.code, JSON.stringify(me));
+      if (!store.get('lang') && r.lang) lang = r.lang;
+      if (r.code && r.code !== CODE && API) history.replaceState(null, '', '/g/' + r.code);   // typed their name on the home page
+      render(); scrollTo(0, 0);
+    } catch {
+      err.textContent = n.failed; err.hidden = false; go.disabled = false; go.textContent = n.open;
+    }
+  });
+}
+
+function daysUntil(iso) { return Math.ceil((new Date(`${iso}T00:00:00+02:00`).getTime() - Date.now()) / 86400000); }
+
+function calendarLinks() {
+  const { first: a, second: b } = SITE.couple, v = SITE.venue;
+  const d = SITE.date.replace(/-/g, '');
+  const next = new Date(`${SITE.date}T12:00:00Z`); next.setUTCDate(next.getUTCDate() + 1);
+  const end = next.toISOString().slice(0, 10).replace(/-/g, '');
+  const title = `${a} & ${b} – wedding`, where = `${v.name}, ${v.town}, ${v.region}`;
+  const google = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + `&text=${encodeURIComponent(title)}&dates=${d}/${end}&location=${encodeURIComponent(where)}`;
+  const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Stoffberg Troufees//EN', 'BEGIN:VEVENT',
+    `UID:troufees-${d}@stoffbergtroufees.com`, `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '')}`,
+    `DTSTART;VALUE=DATE:${d}`, `DTEND;VALUE=DATE:${end}`, `SUMMARY:${title}`, `LOCATION:${where.replace(/,/g, '\\,')}`,
+    'END:VEVENT', 'END:VCALENDAR', ''].join('\r\n');
+  return { google, ics: 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics) };
+}
+const isApple = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
+
+function renderInvite() {
+  const t = T[lang];
+  const { first: a, second: b } = SITE.couple;
+  const v = SITE.venue;
+  const days = daysUntil(SITE.date);
+  const maps = encodeURIComponent(v.mapsQuery);
+  const cal = calendarLinks();
+
+  $('#app').innerHTML = `
+    <section class="hero" id="top">
+      <img class="scene" src="/chapel.webp" alt="${SCENE_ALT[lang]}">
+      <p class="dear">${t.dear} ${esc(me.greeting)},</p>
+      <p class="std">${t.saveTheDate}</p>
+      <h1 class="names">${esc(a)}<span class="amp">&amp;</span>${esc(b)}</h1>
+      <p class="date" aria-label="${fmtDate(SITE.date, lang)}">${fmtDate(SITE.date, lang).split(' ').map(esc).join('<i></i>')}</p>
+      <p class="where">${esc(v.name)}, ${esc(v.town)}, ${t.country}</p>
+      <p class="lead">${t.gettingMarried}</p>
+      ${days >= 0 ? `<p class="countdown">${days === 0 ? t.today : t.daysToGo(days)}</p>` : ''}
+      <div class="actions">
+        <a class="btn" id="cal" href="${isApple ? cal.ics : cal.google}" ${isApple ? 'download="ane-en-dirk.ics"' : 'target="_blank" rel="noopener"'}>${icon.cal}${t.addCalendar}</a>
+      </div>
+    </section>
+
+    <section class="place" aria-label="${t.thePlace}">
+      <h3>${esc(v.name)}</h3>
+      <p class="town">${esc(v.town)}, ${t.region}</p>
+      <p>${t.placeNote}</p>
+      <div class="actions">
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=${maps}" target="_blank" rel="noopener">${icon.pin}${t.googleMaps}</a>
+        <a class="btn ghost" href="https://maps.apple.com/?q=${maps}" target="_blank" rel="noopener">${icon.pin}${t.appleMaps}</a>
+      </div>
+    </section>
+    <p class="later">${t.detailsFollow}</p>
+    <p class="later">${t.celebrate}</p>
+
+    <section class="game-block" id="play" aria-labelledby="play-h">
+      <h2 id="play-h">${G[lang].playTitle}</h2>
+      <p class="how">${G[lang].playLead} ${G[lang].playHow}</p>
+      <div class="game-box"><canvas id="game" tabindex="0" aria-label="${G[lang].playTitle}. ${G[lang].playHow}"></canvas></div>
+    </section>`;
+
+  $('#footer').innerHTML = `<p>${t.remembered}</p><button type="button" id="notme">${N[lang].notYou}</button>`;
+  $('#notme').onclick = () => { store.del(KEY); me = null; render(); scrollTo(0, 0); };
+  $('#cal').addEventListener('click', () => track('calendar'));
+  if (window.__game) window.__game.destroy();
+  window.__game = mountGame($('#game'), () => G[lang]);
+}
+
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.lang; store.set('lang', lang); render(); });
+render();
+if (me) track('open');        // returning visitor on a remembered phone
+
+</script>
+</body>
+</html>
