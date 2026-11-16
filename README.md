@@ -28,6 +28,11 @@ The guest list never goes into this repo, so the repo can stay public.
    | *(leave empty)* | Jan & Marie | Jan van der Merwe; Marie van der Merwe | af | *(leave empty)* |
 
    Want one link per person? Put one name per row.
+
+   **First names only for now?** That works too: with the personal link, the right first name is enough
+   (a title like "Oom" or "Tannie" in front is ignored). The full name the guest types is saved in the
+   Directory, so you collect surnames as people open their link. Once you put a full name in column C,
+   that guest has to type the full name.
 5. **Troufees > Make personal links**. Codes and links appear in columns A and E. Existing codes never change, so you can add guests later.
 
 ## 2. Connect the sheet to the website (once)

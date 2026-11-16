@@ -56,7 +56,6 @@ function makeLinks() {
       let c; do { c = newCode(); } while (used.has(c));
       used.add(c); r[0] = c;
     }
-    if (!String(r[3]).trim()) r[3] = 'en';
     r[4] = SITE_URL + '/g/' + String(r[0]).trim();
   });
   sh.getRange(2, 1, rows, 5).setValues(data);
@@ -93,13 +92,13 @@ function doPost(e) {
 function verify(req) {
   const typed = clip(req.name, 120);
   const byCode = findByCode(req.code);
-  let guest = byCode && nameMatches(typed, byCode.names) ? byCode : null;
+  let guest = byCode && (nameMatches(typed, byCode.names) || firstNameMatches(typed, byCode.names)) ? byCode : null;
   if (!guest) guest = guests().find(g => nameMatches(typed, g.names)) || null;   // right name, other (or no) link
   if (!guest) {
     record('Name not matched', byCode, req, 'no');
     return { ok: false, reason: 'no_match' };
   }
-  const canonical = guest.names.find(n => nameMatches(typed, [n])) || typed;
+  const canonical = guest.names.find(n => nameMatches(typed, [n])) || titleCase(typed);   // first-name-only entries keep the full name they typed
   record('Name entered', guest, req, 'yes', canonical);
   return { ok: true, code: guest.code, greeting: guest.invite, names: guest.names, lang: guest.lang, name: canonical };
 }
@@ -114,7 +113,7 @@ function guests() {
       code: String(r[0]).trim().toLowerCase(),
       invite: String(r[1]).trim() || String(r[2]).split(';')[0].trim(),
       names: String(r[2]).split(';').map(s => s.trim()).filter(Boolean),
-      lang: ['en', 'af', 'nl'].indexOf(String(r[3]).trim().toLowerCase()) >= 0 ? String(r[3]).trim().toLowerCase() : 'en',
+      lang: ['en', 'af', 'nl'].indexOf(String(r[3]).trim().toLowerCase()) >= 0 ? String(r[3]).trim().toLowerCase() : '',   // empty: page keeps the visitor's own language
       link: String(r[4]).trim() || SITE_URL + '/g/' + String(r[0]).trim(),
     }));
 }
@@ -138,6 +137,20 @@ function nameMatches(typed, names) {
     const a = f.split(' '), b = t.split(' ');
     return b.length === 2 && a.length > 2 && a[0] === b[0] && a[a.length - 1] === b[1];   // first + last name only
   });
+}
+
+// While the guest list only has a first name (or "Oom Rene", "Tannie Yvonne"), the personal link plus
+// the right first name is enough. The full name they type is saved in the Directory. Once you put full
+// names in the Guests tab, the stricter full-name check above takes over for that guest.
+function firstNameMatches(typed, names) {
+  const first = fold(typed).split(' ')[0];
+  return names.some(n => {
+    const f = fold(n).replace(/^(oom|tannie|ouma|oupa|tant) /, '');
+    return f.indexOf(' ') < 0 && f === first;
+  });
+}
+function titleCase(s) {
+  return String(s).trim().replace(/\s+/g, ' ').split(' ').map(w => /^(van|der|den|de|du|le|la|von)$/i.test(w) ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 function record(event, guest, req, matched, canonical) {
