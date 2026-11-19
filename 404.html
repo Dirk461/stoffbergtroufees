@@ -809,11 +809,8 @@ function renderGate(msg) {
         <p class="error" id="err" role="alert" ${msg ? '' : 'hidden'}>${msg ? esc(msg) : ''}</p>
         <button class="btn submit" type="submit" id="go">${n.open}</button>
       </form>
-    </section>
-    <div class="board" id="board" ${API ? '' : 'hidden'}></div></div>`;
+    </section></div>`;
   $('#footer').innerHTML = '';
-  drawBoard(board);
-  loadBoard();
   $('#gate').addEventListener('submit', async e => {
     e.preventDefault();
     const name = $('#fname').value.trim().replace(/\s+/g, ' ');
