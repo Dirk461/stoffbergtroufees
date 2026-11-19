@@ -68,6 +68,7 @@ Repo **Settings > Pages**: Source **Deploy from a branch**, branch **main**, fol
 ## What you'll see in the sheet
 
 - **Directory**: one row per invite that has been opened: who typed their name, first and last visit, number of visits, and whether they clicked **Add to calendar** (and when).
+- **Scores**: the game leaderboard, best score per player. The page shows the top 10 as first name + initial.
 - **Log**: every event, newest at the bottom: *Name entered*, *Name not matched*, *Opened* (a returning guest on the same phone), *Added to calendar*.
 
 ## Notes

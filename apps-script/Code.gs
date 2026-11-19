@@ -19,6 +19,7 @@ const TABS = {
   Guests:    ['Code', 'Invite name', 'Names (separate with ;)', 'Language (en/af/nl)', 'Personal link'],
   Log:       ['Time', 'Event', 'Code', 'Invite', 'Name typed', 'Matched', 'Language', 'Device'],
   Directory: ['Invite', 'Code', 'Personal link', 'Name entered', 'First visit', 'Last visit', 'Visits', 'Added to calendar', 'Calendar clicked at'],
+  Scores:    ['Code', 'Player', 'Best score', 'Caught Ané', 'Games played', 'Last played'],
 };
 
 // ---------- Menu ----------
@@ -83,6 +84,8 @@ function doPost(e) {
     if (req.action === 'verify') return json(verify(req));
     if (req.action === 'open') { record('Opened', findByCode(req.code), req, 'yes'); return json({ ok: true }); }
     if (req.action === 'calendar') { record('Added to calendar', findByCode(req.code), req, 'yes'); return json({ ok: true }); }
+    if (req.action === 'score') return json(saveScore(req));
+    if (req.action === 'leaderboard') return json({ ok: true, rows: leaderboard(req.code) });
     return json({ ok: false, error: 'unknown_action' });
   } finally {
     lock.releaseLock();
@@ -101,6 +104,56 @@ function verify(req) {
   const canonical = guest.names.find(n => nameMatches(typed, [n])) || titleCase(typed);   // first-name-only entries keep the full name they typed
   record('Name entered', guest, req, 'yes', canonical);
   return { ok: true, code: guest.code, greeting: guest.invite, names: guest.names, lang: guest.lang, name: canonical };
+}
+
+// ---------- Game leaderboard ----------
+// One row per player (link + name). Only guests with a real link can post a score.
+function scoresSheet() {
+  const ss = SpreadsheetApp.getActive();
+  let sh = ss.getSheetByName('Scores');
+  if (!sh) {
+    sh = ss.insertSheet('Scores');
+    sh.getRange(1, 1, 1, TABS.Scores.length).setValues([TABS.Scores]).setFontWeight('bold');
+    sh.setFrozenRows(1);
+  }
+  return sh;
+}
+function saveScore(req) {
+  const guest = findByCode(req.code);
+  const score = Math.floor(Number(req.score));
+  if (!guest || !(score >= 0 && score <= 5000)) return { ok: false };
+  const player = clip(req.name, 120) || guest.invite;
+  const sh = scoresSheet(), now = new Date();
+  const last = sh.getLastRow();
+  const data = last > 1 ? sh.getRange(2, 1, last - 1, 6).getValues() : [];
+  const i = data.findIndex(r => String(r[0]) === guest.code && fold(r[1]) === fold(player));
+  if (i < 0) {
+    sh.appendRow([guest.code, player, score, req.won ? 'Yes' : 'No', 1, now]);
+  } else {
+    const r = data[i];
+    r[2] = Math.max(Number(r[2]) || 0, score);
+    if (req.won) r[3] = 'Yes';
+    r[4] = (Number(r[4]) || 0) + 1;
+    r[5] = now;
+    sh.getRange(i + 2, 1, 1, 6).setValues([r]);
+  }
+  return { ok: true, rows: leaderboard(guest.code, player) };
+}
+// Top 10, shown as first name + surname initial ("Marie v.").
+function leaderboard(code, player) {
+  const sh = scoresSheet();
+  const last = sh.getLastRow();
+  if (last < 2) return [];
+  code = String(code || '').toLowerCase();
+  return sh.getRange(2, 1, last - 1, 4).getValues()
+    .filter(r => String(r[0]) && Number(r[2]) > 0)
+    .sort((a, b) => Number(b[2]) - Number(a[2]))
+    .slice(0, 10)
+    .map(r => ({ name: shortName(r[1]), score: Number(r[2]), caught: r[3] === 'Yes', me: String(r[0]) === code && (!player || fold(r[1]) === fold(player)) }));
+}
+function shortName(n) {
+  const parts = String(n).trim().split(/\s+/);
+  return parts.length > 1 ? parts[0] + ' ' + parts[parts.length - 1].charAt(0).toUpperCase() + '.' : parts[0];
 }
 
 // ---------- Sheet helpers ----------

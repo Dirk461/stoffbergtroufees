@@ -253,6 +253,17 @@ a { color: var(--olive); }
     box-shadow: inset 0 1px 0 #fff, 0 10px 30px -8px rgba(63,72,40,.16); background: #fbfcf7; }
   .game-box canvas { display: block; touch-action: manipulation; cursor: pointer; -webkit-user-select: none; user-select: none; }
   .game-box canvas:focus-visible { outline: 2px solid var(--olive); outline-offset: -4px; }
+  .board { margin: 2rem auto 0; max-width: 30rem; text-align: left; }
+  .board h3 { font-size: 1.6rem; color: var(--olive-deep); text-align: center; margin-bottom: .75rem; }
+  .board ol { list-style: none; padding: 0; margin: 0; }
+  .board li { display: flex; align-items: baseline; gap: 1rem; padding: .7rem .5rem; border-top: 1px solid var(--line); }
+  .board li:last-child { border-bottom: 1px solid var(--line); }
+  .board .rank { width: 1.5rem; font-family: var(--display); color: var(--beige-deep); }
+  .board .who { flex: 1; }
+  .board .who small { color: var(--beige-deep); font-style: italic; margin-left: .35rem; }
+  .board .pts { font-family: var(--display); font-size: 1.15rem; color: var(--olive-deep); }
+  .board li.me { background: linear-gradient(90deg, rgba(241,248,233,.95), rgba(241,248,233,0)); border-radius: .5rem; }
+  .board .empty { text-align: center; font-style: italic; color: var(--ink-soft); }
   .how { font-style: italic; color: var(--beige-deep); margin: .5rem auto 0; max-width: 26rem; }
 
   .btn[disabled] { opacity: .6; }
@@ -878,13 +889,38 @@ function renderInvite() {
       <h2 id="play-h">${G[lang].playTitle}</h2>
       <p class="how">${G[lang].playLead} ${G[lang].playHow}</p>
       <div class="game-box"><canvas id="game" tabindex="0" aria-label="${G[lang].playTitle}. ${G[lang].playHow}"></canvas></div>
+      <div class="board" id="board" ${API ? '' : 'hidden'}></div>
     </section>`;
 
   $('#footer').innerHTML = `<p>${t.remembered}</p><button type="button" id="notme">${N[lang].notYou}</button>`;
   $('#notme').onclick = () => { store.del(KEY); me = null; render(); scrollTo(0, 0); };
   $('#cal').addEventListener('click', () => track('calendar'));
   if (window.__game) window.__game.destroy();
-  window.__game = mountGame($('#game'), () => G[lang]);
+  window.__game = mountGame($('#game'), () => G[lang], { onEnd: submitScore });
+  drawBoard(board);
+  loadBoard();
+}
+
+// ---------- Leaderboard (kept in the Google Sheet, "Scores" tab) ----------
+let board = null;                     // null = not loaded yet
+async function loadBoard() {
+  if (!API || !me) return;
+  try { const r = await call('leaderboard', { code: me.code }); if (r.ok) { board = r.rows; drawBoard(board); } } catch {}
+}
+async function submitScore(score, won) {
+  if (!API || !me || !score) return;
+  try {
+    const r = await call('score', { code: me.code, name: me.name, score, won });
+    if (r.ok && r.rows) { board = r.rows; drawBoard(board); }
+  } catch {}
+}
+function drawBoard(rows) {
+  const el = $('#board'); if (!el || !API) return;
+  const g = G[lang];
+  if (!rows) { el.innerHTML = `<h3>${g.board}</h3><p class="empty">…</p>`; return; }
+  el.innerHTML = `<h3>${g.board}</h3>` + (rows.length
+    ? `<ol>${rows.map((r, k) => `<li class="${r.me ? 'me' : ''}"><span class="rank">${k + 1}</span><span class="who">${esc(r.name)}${r.me ? `<small>(${g.you})</small>` : ''}</span><span class="pts">${r.score}</span></li>`).join('')}</ol>`
+    : `<p class="empty">${g.boardEmpty}</p>`);
 }
 
 document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.lang; store.set('lang', lang); render(); });
