@@ -809,8 +809,11 @@ function renderGate(msg) {
         <p class="error" id="err" role="alert" ${msg ? '' : 'hidden'}>${msg ? esc(msg) : ''}</p>
         <button class="btn submit" type="submit" id="go">${n.open}</button>
       </form>
-    </section></div>`;
+    </section>
+    <div class="board" id="board" ${API ? '' : 'hidden'}></div></div>`;
   $('#footer').innerHTML = '';
+  drawBoard(board);
+  loadBoard();
   $('#gate').addEventListener('submit', async e => {
     e.preventDefault();
     const name = $('#fname').value.trim().replace(/\s+/g, ' ');
@@ -904,8 +907,8 @@ function renderInvite() {
 // ---------- Leaderboard (kept in the Google Sheet, "Scores" tab) ----------
 let board = null;                     // null = not loaded yet
 async function loadBoard() {
-  if (!API || !me) return;
-  try { const r = await call('leaderboard', { code: me.code }); if (r.ok) { board = r.rows; drawBoard(board); } } catch {}
+  if (!API) return;
+  try { const r = await call('leaderboard', { code: me ? me.code : '' }); if (r.ok) { board = r.rows; drawBoard(board); } } catch {}
 }
 async function submitScore(score, won) {
   if (!API || !me || !score) return;
